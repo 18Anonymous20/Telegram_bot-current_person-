@@ -1,5 +1,7 @@
 import logging
 import random
+import logging
+import random
 
 import aiogram
 from aiogram import Bot, Dispatcher
@@ -19,6 +21,6 @@ logging.basicConfig(level=logging.DEBUG)
 @dp.message_handler(content_types=['text'])
 async def message(message):
     info = ['Хех', 'Редкое сообщение! Кто увидел тот лох!', 'Случайная фраза', 'Привет! Я бот!', 'Шекспир написал Ромео и Джульетта', 'Водка пиво водка пиво под конец корпаратива', 'Здравствуй юность в сапогах!', 'корень из 121 равен 11']
-    chat_id = 1039871796
-    await message.answer(chat_id, random.choice(info))  # отвечаем на сообщение текстом
+    id = 10000000000 # вместо этого числа вводим айди пользователя, на сообщение которого реагирует бот
+    await bot.send_message(id, random.choice(info))
 executor.start_polling(dp, skip_updates=True)
